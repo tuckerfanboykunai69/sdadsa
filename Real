@@ -1,0 +1,59 @@
+getgenv().SecureMode = true
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+
+local Window = Rayfield:CreateWindow({
+	Name = "cheatrs palace",
+	LoadingTitle = "Cheaters Delight",
+	LoadingSubtitle = "by kunai!!!!!!",
+	ConfigurationSaving = {
+		Enabled = true,
+		FolderName = nil, -- Create a custom folder for your hub/game
+		FileName = "Tucker Hub"
+	},
+        Discord = {
+        	Enabled = false,
+        	Invite = "Vjfxd5Z7", -- The Discord invite code, do not include discord.gg/
+        	RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+        },
+	KeySystem = true, -- Set this to true to use our key system
+	KeySettings = {
+		Title = "Tucker Hub",
+		Subtitle = "Key System",
+		Note = "you fat retard join the group chat",
+		FileName = "TuckerKey",
+		SaveKey = true,
+		GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+		Key = "mlk is daddy-mBr37cJcLj"
+	}
+})
+
+local Tab = Window:CreateTab("Combat")
+local Section = Tab:CreateSection("Combat")
+
+local Keybind = Tab:CreateKeybind({
+	Name = "Keybind Example",
+	CurrentKeybind = "F",
+	HoldToInteract = false,
+	Flag = "Keybind1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Keybind)
+		while wait() do
+            game:GetService("Workspace")[game.Players.LocalPlayer.Name].ClassicSword.GripPos=Vector3.new(0, 0, -7)
+            wait()
+            game:GetService("Workspace")[game.Players.LocalPlayer.Name].ClassicSword.GripPos=Vector3.new(0, 0, -1.5)
+            end
+	end,
+})
+
+-- Auto Level Up
+
+local Tab = Window:CreateTab("Orbs") -- Title, Image
+
+local Button = Tab:CreateButton({
+	Name = "Delete Lasers",
+	Callback = function()
+        game:GetService("Workspace").BossLasers:Destroy()
+	end,
+})
+
+
+Rayfield:LoadConfiguration()
