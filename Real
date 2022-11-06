@@ -48,12 +48,5 @@ local Keybind = Tab:CreateKeybind({
 
 local Tab = Window:CreateTab("Orbs") -- Title, Image
 
-local Button = Tab:CreateButton({
-	Name = "Delete Lasers",
-	Callback = function()
-        game:GetService("Workspace").BossLasers:Destroy()
-	end,
-})
-
 
 Rayfield:LoadConfiguration()
